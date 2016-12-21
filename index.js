@@ -10,6 +10,7 @@ var monitor = function() {
   var _this = this;
 
   this.tick = function() {
+
     var statusObject = {
       hostname: os.hostname(),
       loadavg: os.loadavg(),
@@ -22,7 +23,7 @@ var monitor = function() {
       arch: os.arch(),
       release: os.release()
     };
-    this.emit('monitor', statusObject);
+    _this.emit('monitor', statusObject);
   };
 
   files.map(function(file) {
