@@ -2,7 +2,6 @@
 const EventEmitter = require('events').EventEmitter;
 const util = require('util');
 const files = require('./config/files');
-const fs = require('fs');
 const os = require('os');
 const disk = require('diskusage');
 
