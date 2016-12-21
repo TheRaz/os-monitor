@@ -8,12 +8,10 @@ const os = require('os');
 var monitor = function() {
 
   var _this = this;
+  files.map(function(file) {
+    fs.watchFile(file, _this.tick);
+  });
 
-  this.init = function() {
-    files.map(function(file) {
-      fs.watchFile(file, _this.tick);
-    });
-  };
   this.tick = function() {
     var statusObject = {
       hostname: os.hostname(),
