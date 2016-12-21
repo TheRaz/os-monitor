@@ -1,0 +1,11 @@
+{
+  "name": "os-monitor",
+  "version": "1.0.0",
+  "description": "A node.js based server performance monitor",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Rasmus Wallin",
+  "license": "MIT"
+}
