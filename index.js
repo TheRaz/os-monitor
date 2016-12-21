@@ -16,21 +16,21 @@ var monitor = function(interval) {
         timestamp: new Date(),
         uptime: os.uptime(),
         memory: {
-          total: Math.floor(os.totalmem() / 1024 / 1024),
-          free: Math.floor(os.freemem()  / 1024 / 1024),
-          used: Math.floor((os.totalmem() - os.freemem()) / 1024 / 1024),
-          percentage: Math.floor(((os.totalmem() - os.freemem()) / os.totalmem()) * 100)
+          total: Math.round(os.totalmem() / 1024 / 1024),
+          free: Math.round(os.freemem()  / 1024 / 1024),
+          used: Math.round((os.totalmem() - os.freemem()) / 1024 / 1024),
+          percentage: Math.round(((os.totalmem() - os.freemem()) / os.totalmem()) * 100)
         },
         cpu: {
           loadavg: os.loadavg()[0],
           count: os.cpus().length,
-          percentage: Math.floor((os.loadavg()[0] / os.cpus().length) * 100)
+          percentage: Math.round((os.loadavg()[0] / os.cpus().length) * 100)
         },
         hdd: {
-          total: Math.floor(hdd.total / 1024 / 1024),
-          free: Math.floor(hdd.free / 1024 / 1024),
-          used: Math.floor((hdd.total - hdd.free)  / 1024 / 1024),
-          percentage: Math.floor(((hdd.total - hdd.free) / hdd.total) * 100)
+          total: Math.round(hdd.total / 1024 / 1024),
+          free: Math.round(hdd.free / 1024 / 1024),
+          used: Math.round((hdd.total - hdd.free)  / 1024 / 1024),
+          percentage: Math.round(((hdd.total - hdd.free) / hdd.total) * 100)
         }
       };
       _this.emit('monitor', statusObject);
