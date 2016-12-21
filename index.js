@@ -8,9 +8,6 @@ const os = require('os');
 var monitor = function() {
 
   var _this = this;
-  files.map(function(file) {
-    fs.watchFile(file, _this.tick);
-  });
 
   this.tick = function() {
     var statusObject = {
@@ -27,6 +24,11 @@ var monitor = function() {
     };
     this.emit('monitor', statusObject);
   };
+
+  files.map(function(file) {
+    fs.watchFile(file, _this.tick);
+  });
+
 };
 
 util.inherits(monitor, EventEmitter);
