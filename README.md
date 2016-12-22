@@ -11,8 +11,3 @@ os-monitor is a node.js based server monitoring system emitting an event every w
   });
 
 ```
-
-### Config
-
-Specify what files to watch to emit event,
-default is ```/proc/stat```
