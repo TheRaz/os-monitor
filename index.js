@@ -12,7 +12,7 @@ var monitor = function(interval) {
 
   this.tick = function(curr, prev) {
     disk.check('/', function(err, hdd) {
-      let statusObject = {
+      var statusObject = {
         timestamp: new Date(),
         uptime: os.uptime(),
         memory: {
